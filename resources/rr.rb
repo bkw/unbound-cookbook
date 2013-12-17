@@ -18,6 +18,7 @@
 #
 
 actions :add
+default_action :add
 
 attribute :fqdn,     :kind_of => String, :name_attribute => true
 attribute :ip,       :kind_of => String, :required => true
