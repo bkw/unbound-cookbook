@@ -27,4 +27,5 @@ end
 action :add do
   unless @rr.exists
   end
+  new_resource.updated_by_last_action(true)
 end
