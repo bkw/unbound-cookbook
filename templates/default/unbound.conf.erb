@@ -153,7 +153,7 @@ server:
   <% end -%>
 
   # Enable IPv6, "yes" or "no".
-  # do-ip6: yes
+  do-ip6: <%= node['unbound']['enable_ipv6'] ? 'yes' : 'no' %>
 
   # Enable UDP, "yes" or "no".
   # do-udp: yes
