@@ -32,7 +32,7 @@ directory "#{node['unbound']['directory']}/conf.d" do
   group root_group
 end
 
-Info "XXX: #{node['unbound'].inspect}"
+log "XXX: #{node['unbound'].inspect}"
 template "#{node['unbound']['directory']}/unbound.conf" do
   source "unbound.conf.erb"
   mode 0644
