@@ -3,7 +3,7 @@ default['unbound']['outgoing_interface'] = nil
 default['unbound']['port'] = 53
 default['unbound']['num_threads'] = 1
 default['unbound']['enable_ipv4'] = true
-default['unbound']['enable_ipv6'] = node.has_key?('ip6address') && node['ip6address']
+default['unbound']['enable_ipv6'] = node.has_key?('ip6address') && ! node['ip6address'].nil? && ! node['ip6address'].match(/^fe80::/)
 default['unbound']['enable_tcp'] = true
 default['unbound']['enable_udp'] = true
 default['unbound']['access_control'] = { "127.0.0.1/8" => "allow", "0.0.0.0/0" => "refuse" }
