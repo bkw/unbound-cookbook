@@ -71,7 +71,7 @@ end
 
 # Delayed package install for Ubuntu. Have to tell 'apt-get install' to accept
 # the configuration files installed above or the Chef run break.
-if node[:platform] == "ubuntu"
+if node['platform'] == "ubuntu"
 
   template "/etc/default/unbound" do
     source "default_unbound.erb"
