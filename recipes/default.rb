@@ -26,10 +26,9 @@ root_group = value_for_platform(
 # Chef server is in a private zone (e.g., chef.mycorp), this renders the Chef
 # server unreachable and breaks the rest of the Chef run. So defer installation
 # until configuration files are in place if running on Ubuntu.
-unless node[:platform] == 'ubuntu'
-  package "unbound" do
-    action :upgrade
-  end
+package "unbound" do
+  action :upgrade
+  only_if { node['platform'] == 'ubuntu' }
 end
 
 directory "#{node['unbound']['directory']}/conf.d" do
